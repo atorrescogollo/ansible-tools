@@ -6,12 +6,12 @@ WORKDIR=$(realpath ${WORKDIR})
 if [ $# -gt 1 ]||[ ! -d "$WORKDIR" ]
 then
         2>&1 echo "Usage: mk-ansible-workspace [<workspace directory>]"
-        return
+        exit 1
 fi
 if [ "$(ls -A ${WORKDIR})" ]
 then
         2>&1 echo "${WORKDIR} is not empty!"
-        return
+        exit 1
 fi
 
 echo "# Production Servers" > ${WORKDIR}/production.inventory
@@ -29,6 +29,6 @@ echo "# Playbook for Webserver tier" > ${WORKDIR}/webservers.yaml
 
 mkdir -p "${WORKDIR}/roles"
 
-./mk-ansible-role.sh ${WORKDIR} common
+mk-ansible-role.sh ${WORKDIR} common
 
 tree ${WORKDIR}

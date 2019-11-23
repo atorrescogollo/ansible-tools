@@ -11,7 +11,7 @@ case $# in
         ;;
         *)
                 2>&1 echo "Usage: mk-ansible-role [<workspace directory>] [<role name>]"
-                return
+                exit 1
         ;;
 esac
 
@@ -20,14 +20,14 @@ WORKDIR=$(realpath ${WORKDIR})
 if [ ! -d "$WORKDIR" ]||[ ! "$(ls -A ${WORKDIR})" ]||[ ! -d "${WORKDIR}/roles" ]
 then
         2>&1 echo "Usage: mk-ansible-role [<workspace directory>] [<role name>]"
-        return
+        exit 1
 fi
 
 ROLEDIR="${WORKDIR}/roles/${ROLENAME}"
 if [ -e "${ROLEDIR}" ]
 then
         echo "${ROLENAME} role already exists (${ROLEDIR})"
-        return
+        exit 1
 fi
 
 mkdir -p "${ROLEDIR}/tasks"
