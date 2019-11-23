@@ -29,6 +29,13 @@ echo "# Playbook for Webserver tier" > ${WORKDIR}/webservers.yaml
 
 mkdir -p "${WORKDIR}/roles"
 
-mk-ansible-role.sh ${WORKDIR} common
+if [ -f "./mk-ansible-role.sh" ]
+then
+	mkrole="bash mk-ansible-role.sh"
+else
+	mkrole="mk-ansible-role"
+fi
+
+${mkrole} ${WORKDIR} common
 
 tree ${WORKDIR}
