@@ -34,22 +34,22 @@ mkdir -p "${ROLEDIR}/tasks"
 echo "# Tasks File" > "${ROLEDIR}/tasks/main.yaml"
 
 mkdir -p "${ROLEDIR}/handlers"
-echo "# Handlers File" > "${ROLEDIR}/handlers/main.yaml"
+#echo "# Handlers File" > "${ROLEDIR}/handlers/main.yaml"
 
 mkdir -p "${ROLEDIR}/templates"
-echo "# Template File" > "${ROLEDIR}/templates/template.txt.j2"
+#echo "# Template File" > "${ROLEDIR}/templates/template.txt.j2"
 
 mkdir -p "${ROLEDIR}/files"
-echo "# Data File" > "${ROLEDIR}/files/file.txt"
+#echo "# Data File" > "${ROLEDIR}/files/file.txt"
 
 mkdir -p "${ROLEDIR}/vars"
-echo "# Rol variables" > "${ROLEDIR}/vars/main.yaml"
+#echo "# Rol variables" > "${ROLEDIR}/vars/main.yaml"
 
 mkdir -p "${ROLEDIR}/defaults"
-echo "# Rol default variables" > "${ROLEDIR}/defaults/main.yaml"
+#echo "# Rol default variables" > "${ROLEDIR}/defaults/main.yaml"
 
-mkdir -p "${ROLEDIR}/meta"
-echo "# Rol dependencies" > "${ROLEDIR}/meta/main.yaml"
+#mkdir -p "${ROLEDIR}/meta"
+#echo "# Rol dependencies" > "${ROLEDIR}/meta/main.yaml"
 
 echo "Role created: ${ROLEDIR}"
 

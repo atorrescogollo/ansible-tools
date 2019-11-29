@@ -14,18 +14,19 @@ then
         exit 1
 fi
 
-echo "# Production Servers" > ${WORKDIR}/production.inventory
-echo "# Staging Servers" > ${WORKDIR}/staging.inventory
+mkdir -p "${WORKDIR}/inventory"
+echo "# Production Servers" > ${WORKDIR}/inventory/production.hosts
+#echo "# Staging Servers" > ${WORKDIR}/inventory/staging.hosts
 
 mkdir -p "${WORKDIR}/group_vars/"
-echo "# Assign variables to particular groups" > ${WORKDIR}/group_vars/group1.yaml
-echo "# Assign variables to particular groups" > ${WORKDIR}/group_vars/group2.yaml
+#echo "# Assign variables to particular groups" > ${WORKDIR}/group_vars/group1.yaml
+#echo "# Assign variables to particular groups" > ${WORKDIR}/group_vars/group2.yaml
 mkdir -p "${WORKDIR}/host_vars/"
-echo "# Assign variables to particular server" > ${WORKDIR}/host_vars/hostname1.yaml
-echo "# Assign variables to particular server" > ${WORKDIR}/host_vars/hostname2.yaml
+#echo "# Assign variables to particular server" > ${WORKDIR}/host_vars/hostname1.yaml
+#echo "# Assign variables to particular server" > ${WORKDIR}/host_vars/hostname2.yaml
 
 echo "# Master Playbook" > ${WORKDIR}/site.yaml
-echo "# Playbook for Webserver tier" > ${WORKDIR}/webservers.yaml
+#echo "# Playbook for Webserver tier" > ${WORKDIR}/webservers.yaml
 
 mkdir -p "${WORKDIR}/roles"
 
